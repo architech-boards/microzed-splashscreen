@@ -35,7 +35,7 @@ cd ..
 ROOT_DIRECTORY=`pwd`
 BASEROOT_SDK=${ROOT_DIRECTORY}
 NR_CPUS=`grep -c ^processor /proc/cpuinfo`
-DEFAULT_MACHINE="microzed-zynq7"
+DEFAULT_MACHINE="microzed"
 WGET_TIMEOUT=60
 
 
@@ -106,7 +106,7 @@ fi
 # conf/bblayers.conf customization
 
 cd ${ROOT_DIRECTORY}/yocto/build
-TO_MATCH="poky/meta poky/meta-yocto poky/meta-yocto-bsp meta-xilinx"
+TO_MATCH="poky/meta poky/meta-yocto poky/meta-yocto-bsp meta-xilinx meta-microzed"
 BBLAYERS=""
 BBLAYERS_FOUND=`sed -n "/^BBLAYERS /,/\"/ p" conf/bblayers.conf | sed "s|BBLAYERS||g" | sed "s|?||g" | sed "s|=||g" | sed "s|\"||g" | sed "s|\n||g" | sed "s|\\\\\\||g"`
 
